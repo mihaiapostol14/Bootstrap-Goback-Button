@@ -1,0 +1,42 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Fancy sliding-fill effect for the button */
+.btn-fill {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem; /* like rounded-2xl */
+    padding: 0.9rem 2rem; /* height ~56px, width ~192px */
+    font-weight: 600;
+  }
+  
+  .btn-fill > span {
+    position: relative;
+    z-index: 2;
+    transition: color .35s ease;
+  }
+  
+  .btn-fill::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #212529; /* Bootstrap dark */
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .35s ease;
+    z-index: 1;
+    border-radius: inherit;
+  }
+  
+  .btn-fill:hover::before { 
+    transform: scaleX(1); 
+  }
+  
+  .btn-fill:hover > span { 
+    color: #fff; 
+  }
+  
